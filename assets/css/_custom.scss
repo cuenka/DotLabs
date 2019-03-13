@@ -1,0 +1,12 @@
+body {
+  background-color: white;
+}
+.sc-container {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-around;
+  &__column {
+    padding: 5px;
+    box-sizing: border-box;
+  }
+}

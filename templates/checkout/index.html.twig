@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DotLab!{% endblock %}
+
+{% block body %}
+    <h1 class="h1">DotLabs test</h1>
+    <h2 class="h2 mt-2">List before rules applied</h2>
+    {% for product in productsBeforeRules %}
+        <div class="row">
+            <div class="col-4">{{ product.code }}</div>
+            <div class="col-4">{{ product.name }}</div>
+            <div class="col-4">£{{ product.price|number_format(2, '.', ',') }}</div>
+        </div>
+    {% endfor %}
+    <hr>
+
+    <h2 class="h2">List after rules applied</h2>
+    {% for product in productsAfterRules %}
+        <div class="row">
+            <div class="col-4">{{ product.code }}</div>
+            <div class="col-4">{{ product.name }}</div>
+            <div class="col-4">£{{ product.price|number_format(2, '.', ',') }}</div>
+        </div>
+    {% endfor %}
+    <hr>
+    <div class="row">
+        <h3 class="col-8">Total</h3>
+        <h3 class="col-4">£{{ total|number_format(2, '.', ',') }}</h3>
+    </div>
+{%  endblock %}
